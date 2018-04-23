@@ -1,0 +1,52 @@
+﻿<Window x:Class="BarLinkContainerItem.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Window1" Height="300" Width="300" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors">
+    <Grid>
+        <!--region #1-->
+        <dxb:BarManager CreateStandardLayout="True" Margin="12" Name="barManager1">
+
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem x:Name="itemCut" Content="Cut" Glyph="pack://application:,,,/Images/cut16x16.png" />
+                <dxb:BarButtonItem x:Name="itemCopy" Content="Delete" Glyph="pack://application:,,,/Images/copy16x16.png" />
+                <dxb:BarButtonItem x:Name="itemPaste" Content="Paste" Glyph="pack://application:,,,/Images/paste16x16.png" />
+                <dxb:BarButtonItem x:Name="itemUndo" Content="Undo" Glyph="pack://application:,,,/Images/undo16x16.png" />
+                <dxb:BarButtonItem x:Name="itemRedo" Content="Redo" Glyph="pack://application:,,,/Images/redo16x16.png" />
+                <!--Create a BarLinkContainerItem to display three edit commands-->
+                <dxb:BarLinkContainerItem x:Name="linkContainerItem1" Content="Edit Commands">
+                    <dxb:BarLinkContainerItem.ItemLinks>
+                        <dxb:BarButtonItemLink BarItemName="itemCut" />
+                        <dxb:BarButtonItemLink BarItemName="itemCopy" />
+                        <dxb:BarButtonItemLink BarItemName="itemPaste" />
+                    </dxb:BarLinkContainerItem.ItemLinks>
+                </dxb:BarLinkContainerItem>
+                <!--Create a sub-menu displaying the BarLinkContainerItem's items-->
+                <dxb:BarSubItem Content="Edit" x:Name="subMenu1">
+                    <dxb:BarSubItem.ItemLinks>
+                        <dxb:BarLinkContainerItemLink BarItemName="linkContainerItem1" />
+                    </dxb:BarSubItem.ItemLinks>
+                </dxb:BarSubItem>
+
+            </dxb:BarManager.Items>
+
+            <!--Create a bar and display the BarLinkContainerItem and SubMenu in the bar-->
+            <dxb:BarManager.Bars>
+                <dxb:Bar x:Name="bar1" Caption="Bar 1">
+                    <dxb:Bar.DockInfo>
+                        <dxb:BarDockInfo ContainerType="Top" />
+                    </dxb:Bar.DockInfo>
+                    <dxb:Bar.ItemLinks>
+                        <dxb:BarLinkContainerItemLink BarItemName="linkContainerItem1" />
+                        <!--Create a separator between links-->
+                        <dxb:BarItemLinkSeparator />
+                        <dxb:BarButtonItemLink BarItemName="itemUndo" />
+                        <dxb:BarButtonItemLink BarItemName="itemRedo" />
+                        <!--Create a separator between links-->
+                        <dxb:BarItemLinkSeparator />
+                        <dxb:BarSubItemLink BarItemName="subMenu1" />
+                    </dxb:Bar.ItemLinks>
+                </dxb:Bar>
+
+            </dxb:BarManager.Bars>
+            <RichTextBox></RichTextBox>
+        </dxb:BarManager>
+        <!--endregion #1-->
+    </Grid>
+</Window>
