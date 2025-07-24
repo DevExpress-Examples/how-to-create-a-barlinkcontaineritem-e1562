@@ -5,7 +5,7 @@
 
             <dxb:BarManager.Items>
                 <dxb:BarButtonItem x:Name="itemCut" Content="Cut" Glyph="pack://application:,,,/Images/cut16x16.png" />
-                <dxb:BarButtonItem x:Name="itemCopy" Content="Delete" Glyph="pack://application:,,,/Images/copy16x16.png" />
+                <dxb:BarButtonItem x:Name="itemCopy" Content="Copy" Glyph="pack://application:,,,/Images/copy16x16.png" />
                 <dxb:BarButtonItem x:Name="itemPaste" Content="Paste" Glyph="pack://application:,,,/Images/paste16x16.png" />
                 <dxb:BarButtonItem x:Name="itemUndo" Content="Undo" Glyph="pack://application:,,,/Images/undo16x16.png" />
                 <dxb:BarButtonItem x:Name="itemRedo" Content="Redo" Glyph="pack://application:,,,/Images/redo16x16.png" />
@@ -17,7 +17,7 @@
                         <dxb:BarButtonItemLink BarItemName="itemPaste" />
                     </dxb:BarLinkContainerItem.ItemLinks>
                 </dxb:BarLinkContainerItem>
-                <!--Create a sub-menu displaying the BarLinkContainerItem's items-->
+                <!--Create a sub-menu displaying the BarLinkContainerItem's contents-->
                 <dxb:BarSubItem Content="Edit" x:Name="subMenu1">
                     <dxb:BarSubItem.ItemLinks>
                         <dxb:BarLinkContainerItemLink BarItemName="linkContainerItem1" />
