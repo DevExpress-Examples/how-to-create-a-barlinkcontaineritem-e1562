@@ -6,13 +6,13 @@
 
 # WPF Bars - Create a container for BarItem links
 
-This example creates a [BarLinkContainerItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem), which is a container for item links. The [BarLinkContainerItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) contains `Cut`, `Copy` and `Paste` commands. 
+This example creates a [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem), which is a container for item links. The [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) contains `Cut`, `Copy` and `Paste` commands. 
 
 ## Implementation details
 
-In the following code snippet, the [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) contains multiple [`BarButtonItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarButtonItem) elements that represent individual commands: Cut, Copy, Paste, Undo, and Redo. To group the first three commands, the example uses a `BarLinkContainerItem`.
+In the following code snippet, the [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) contains multiple [`BarButtonItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarButtonItem) elements that represent individual commands: `Cut`, `Copy`, `Paste`, `Undo`, and `Redo`. To group the first three commands, the example uses a [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem).
 
-The `BarLinkContainerItem` acts as a container for item links:
+The [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) acts as a container for item links:
 
 ```xaml
 <dxb:BarLinkContainerItem x:Name="linkContainerItem1" Content="Edit Commands">
