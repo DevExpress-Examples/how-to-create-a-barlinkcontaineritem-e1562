@@ -10,7 +10,7 @@ This example uses the [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/D
 
 ![Container for BarItem Links](./Images/bar-items-container.jpg)
 
-Use this technic when you want to:
+Use this technique when you need to:
 
 - Define a set of commands (such as `Cut`, `Copy`, and `Paste`) once and reuse them in multiple locations (for example, in a bar or a submenu).
 - Keep your [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) layout consistent and avoid duplicating command definitions.
@@ -48,7 +48,7 @@ Use the [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.
 
 ### Reuse the Container in a Submenu
 
-You can reuse the container in a [`BarSubItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarSubItem), that acts as a submenu in the UI:
+You can reuse the container in a [`BarSubItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarSubItem), which acts as a submenu in the UI:
 
 ```xaml
 <dxb:BarSubItem Content="Edit" x:Name="subMenu1">
@@ -60,7 +60,7 @@ You can reuse the container in a [`BarSubItem`](https://docs.devexpress.com/WPF/
 
 ### Display Items in a Toolbar
 
-The example defines a top-level bar and adds both the container and the submenu, along with separators and additional items:
+The following code example defines a top-level bar and adds both the container and the submenu, along with separators and additional items:
 
 ```xaml
 <dxb:Bar x:Name="bar1" Caption="Bar 1">
