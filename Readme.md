@@ -6,11 +6,35 @@
 
 # WPF Bars - Create a container for BarItem links
 
-This example creates a [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem), which is a container for item links. The [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) contains `Cut`, `Copy` and `Paste` commands. 
+This example uses the [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) property to group related bar items and reuse them across different containers.
+
+![Container for BarItem Links](./Images/bar-items-container.jpg)
+
+Use this technic when you want to:
+
+- Define a set of commands (such as `Cut`, `Copy`, and `Paste`) once and reuse them in multiple locations (for example, in a bar or a submenu).
+- Keep your [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) layout consistent and avoid duplicating command definitions.
+- Dynamically extend or reorganize bar content without redefining individual item links.
+
+This solution simplifies maintenance and improves clarity when you work with toolbars that include common command groups.
 
 ## Implementation details
 
-In the following code snippet, the [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) contains multiple [`BarButtonItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarButtonItem) elements that represent individual commands: `Cut`, `Copy`, `Paste`, `Undo`, and `Redo`. To group the first three commands, we use a [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem).
+### Bar Items
+
+The example defines five [`BarButtonItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarButtonItem) objects that represent common edit operations:
+
+```xaml
+<dxb:BarButtonItem x:Name="itemCut" Content="Cut" />
+<dxb:BarButtonItem x:Name="itemCopy" Content="Copy" />
+<dxb:BarButtonItem x:Name="itemPaste" Content="Paste" />
+<dxb:BarButtonItem x:Name="itemUndo" Content="Undo" />
+<dxb:BarButtonItem x:Name="itemRedo" Content="Redo" />
+```
+
+### Group Commands in a BarLinkContainerItem
+
+Use the [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) property to group `Cut`, `Copy`, and `Paste` commands into a single reusable unit. This container holds links to existing [`BarButtonItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarButtonItem) elements:
 
 ```xaml
 <dxb:BarLinkContainerItem x:Name="linkContainerItem1" Content="Edit Commands">
@@ -22,7 +46,9 @@ In the following code snippet, the [`BarManager`](https://docs.devexpress.com/WP
 </dxb:BarLinkContainerItem>
 ```
 
-The **Edit** submenu ([`BarSubItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarSubItem)) includes a [`BarLinkContainerItemLink`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarSubItemLink), which references the same group of commands and displays them as submenu items:
+### Reuse the Container in a Submenu
+
+You can reuse the container in a [`BarSubItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarSubItem), that acts as a submenu in the UI:
 
 ```xaml
 <dxb:BarSubItem Content="Edit" x:Name="subMenu1">
@@ -32,26 +58,22 @@ The **Edit** submenu ([`BarSubItem`](https://docs.devexpress.com/WPF/DevExpress.
 </dxb:BarSubItem>
 ```
 
-A top-level bar (**Bar 1**) displays the container item and submenu along with `Undo` and `Redo` commands. Separators visually separate item groups:
+### Display Items in a Toolbar
+
+The example defines a top-level bar and adds both the container and the submenu, along with separators and additional items:
 
 ```xaml
-<dxb:BarManager.Bars>
-    <dxb:Bar x:Name="bar1" Caption="Bar 1">
-        <dxb:Bar.ItemLinks>
-            <dxb:BarLinkContainerItemLink BarItemName="linkContainerItem1" />
-            <!--Create a separator between links-->
-            <dxb:BarItemLinkSeparator />
-            <dxb:BarButtonItemLink BarItemName="itemUndo" />
-            <dxb:BarButtonItemLink BarItemName="itemRedo" />
-            <!--Create a separator between links-->
-            <dxb:BarItemLinkSeparator />
-            <dxb:BarSubItemLink BarItemName="subMenu1" />
-        </dxb:Bar.ItemLinks>
-    </dxb:Bar>
-</dxb:BarManager.Bars>
+<dxb:Bar x:Name="bar1" Caption="Bar 1">
+    <dxb:Bar.ItemLinks>
+        <dxb:BarLinkContainerItemLink BarItemName="linkContainerItem1" />
+        <dxb:BarItemLinkSeparator />
+        <dxb:BarButtonItemLink BarItemName="itemUndo" />
+        <dxb:BarButtonItemLink BarItemName="itemRedo" />
+        <dxb:BarItemLinkSeparator />
+        <dxb:BarSubItemLink BarItemName="subMenu1" />
+    </dxb:Bar.ItemLinks>
+</dxb:Bar>
 ```
-
-This setup allows you to reuse a group of related commands in multiple containers, such as bars and submenus.
 
 ## Files to Review
 
