@@ -12,9 +12,9 @@ This example uses the [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/D
 
 Use this technique when you need to:
 
-- Define a set of commands (such as `Cut`, `Copy`, and `Paste`) once and reuse them in multiple locations (for example, in a bar or a submenu).
-- Keep your [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) layout consistent and avoid duplicating command definitions.
-- Dynamically extend or reorganize bar content without redefining individual item links.
+* Define a set of commands (such as `Cut`, `Copy`, and `Paste`) once and reuse them in multiple locations (for example, in a bar or a submenu).
+* Keep your [`BarManager`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarManager) layout consistent and avoid duplicating command definitions.
+* Dynamically extend or reorganize bar content without redefining individual item links.
 
 This solution simplifies maintenance and improves clarity when you work with toolbars that include common command groups.
 
@@ -31,7 +31,6 @@ The example defines five [`BarButtonItem`](https://docs.devexpress.com/WPF/DevEx
 <dxb:BarButtonItem x:Name="itemUndo" Content="Undo" />
 <dxb:BarButtonItem x:Name="itemRedo" Content="Redo" />
 ```
-
 ### Group Commands in a BarLinkContainerItem
 
 Use the [`BarLinkContainerItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem) property to group `Cut`, `Copy`, and `Paste` commands into a single reusable unit. This container holds links to existing [`BarButtonItem`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarButtonItem) elements:
@@ -82,17 +81,17 @@ The following code example defines a top-level bar and adds both the container a
 
 ## Documentation
 
-- [BarContainerControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarContainerControl)
-- [BarLinkContainerItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem)
-- [Bars](https://docs.devexpress.com/WPF/6194/controls-and-libraries/ribbon-bars-and-menu/bars?p=netframework)
+* [BarContainerControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarContainerControl)
+* [BarLinkContainerItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.BarLinkContainerItem)
+* [Bars](https://docs.devexpress.com/WPF/6194/controls-and-libraries/ribbon-bars-and-menu/bars)
 
 ## More Examples
 
-- [WPF Bars - Use Separators to Group Bar Item Links](https://github.com/DevExpress-Examples/wpf-bars-visually-separate-bar-items)
-- [MVVM Application with WPF Bars](https://github.com/DevExpress-Examples/mvvm-application-with-wpf-bars)
-- [WPF PDF Viewer - Customize the Integrated Bar's Commands](https://github.com/DevExpress-Examples/wpf-pdf-viewer-customize-bar-manager)
-- [WPF MVVM Behaviors - Display Theme Selectors Based on BarItems and Hide Themes from List](https://github.com/DevExpress-Examples/wpf-mvvm-behaviors-barItems-based-theme-selectors)
-- [WPF Dock Layout Manager - Merge Bars in Controls That Support Automatic Merging](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-merge-bars-in-controls-that-support-automatic-merging)
+* [WPF Bars - Use Separators to Group Bar Item Links](https://github.com/DevExpress-Examples/wpf-bars-visually-separate-bar-items)
+* [MVVM Application with WPF Bars](https://github.com/DevExpress-Examples/mvvm-application-with-wpf-bars)
+* [WPF PDF Viewer - Customize the Integrated Bar's Commands](https://github.com/DevExpress-Examples/wpf-pdf-viewer-customize-bar-manager)
+* [WPF MVVM Behaviors - Display Theme Selectors Based on BarItems and Hide Themes from List](https://github.com/DevExpress-Examples/wpf-mvvm-behaviors-barItems-based-theme-selectors)
+* [WPF Dock Layout Manager - Merge Bars in Controls That Support Automatic Merging](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-merge-bars-in-controls-that-support-automatic-merging)
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
@@ -101,3 +100,4 @@ The following code example defines a top-level bar and adds both the container a
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
