@@ -88,7 +88,7 @@ The following code example defines a top-level bar and adds both the container a
 
 ## More Examples
 
-- [WPF Bars - Use separators to group bar item links](https://github.com/DevExpress-Examples/wpf-bars-visually-separate-bar-items)
+- [WPF Bars - Use Separators to Group Bar Item Links](https://github.com/DevExpress-Examples/wpf-bars-visually-separate-bar-items)
 - [MVVM Application with WPF Bars](https://github.com/DevExpress-Examples/mvvm-application-with-wpf-bars)
 - [WPF PDF Viewer - Customize the Integrated Bar's Commands](https://github.com/DevExpress-Examples/wpf-pdf-viewer-customize-bar-manager)
 - [Chart for WPF - Create a 2D Side-by-Side Bar chart](https://github.com/DevExpress-Examples/wpf-charts-create-2d-side-by-side-bar-chart)
